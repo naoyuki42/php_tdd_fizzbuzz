@@ -6,6 +6,7 @@ class FizzBuzz
     // テスト対象のメソッド
     public function fizzbuzz ($value)
     {
-        return $value;
+        $result = "Fizz";
+        return $result;
     }
 }
