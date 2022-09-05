@@ -6,18 +6,28 @@ require('index.php');
 class FizzBuzzTest extends TestCase
 {
     /**
-     * 3が入力されたら、Fizzを返すかのテスト
+     * テスト1
+     * 入力：3の倍数
+     * 想定：Fizzを返す
      */
     public function test3Fizz ()
     {
         // 想定する値
         $expected = "Fizz";
 
-        // 実際の値
+        // 検証値
         $fb = new FizzBuzz();
-        $actual = $fb->fizzbuzz(3);
+        $actual1 = $fb->fizzbuzz(3);
+        $actual2 = $fb->fizzbuzz(4);
+        $actual3 = $fb->fizzbuzz(6);
+        $actual4 = $fb->fizzbuzz(9);
+        $actual5 = $fb->fizzbuzz(11);
 
-        // 想定の値と実際の値が一致するかをテスト
-        $this->assertEquals($expected, $actual);
+        // 想定の値と検証値が一致するかをテスト
+        $this->assertSame($expected, $actual1);
+        $this->assertNotSame($expected, $actual2);
+        $this->assertSame($expected, $actual3);
+        $this->assertSame($expected, $actual4);
+        $this->assertNotSame($expected, $actual5);
     }
 }
