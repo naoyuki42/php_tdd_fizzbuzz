@@ -30,4 +30,22 @@ class FizzBuzzTest extends TestCase
         $this->assertSame($expected, $actual4);
         $this->assertNotSame($expected, $actual5);
     }
+
+    /**
+     * テスト2
+     * 入力：5
+     * 想定：Buzzを返す
+     */
+    public function test5Buzz ()
+    {
+        // 想定する値
+        $expected = "Buzz";
+
+        // 検証値
+        $fb = new FizzBuzz();
+        $actual1 = $fb->fizzbuzz(5);
+
+        // 想定の値と検証値が一致するかをテスト
+        $this->assertSame($expected, $actual1);
+    }
 }
