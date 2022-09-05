@@ -88,4 +88,56 @@ class FizzBuzzTest extends TestCase
         $this->assertSame($expected, $actual6);
         $this->assertSame($expected, $actual7);
     }
+
+    /**
+     * テスト4
+     * 入力：0
+     * 想定：Zeroを返す
+     */
+    public function testZero ()
+    {
+        // 想定する値
+        $expected = "Zero";
+
+        // 検証値
+        $fb = new FizzBuzz();
+        $actual1 = $fb->fizzbuzz(0);
+        $actual2 = $fb->fizzbuzz(3);
+        $actual3 = $fb->fizzbuzz(5);
+        $actual4 = $fb->fizzbuzz(15);
+        $actual5 = $fb->fizzbuzz(26);
+
+        // 想定の値と検証値が一致するかをテスト
+        $this->assertSame($expected, $actual1);
+        $this->assertNotSame($expected, $actual2);
+        $this->assertNotSame($expected, $actual3);
+        $this->assertNotSame($expected, $actual4);
+        $this->assertNotSame($expected, $actual5);
+    }
+
+    /**
+     * テスト5
+     * 入力1：任意の文字列
+     * 入力2：任意の真偽値
+     * 入力3：任意の少数
+     * 想定：Not Integerを返す
+     */
+    public function testNotInteger ()
+    {
+        // 想定する値
+        $expected = "Not Integer";
+
+        // 検証値
+        $fb = new FizzBuzz();
+        $actual1 = $fb->fizzbuzz("Hello World");
+        $actual2 = $fb->fizzbuzz(true);
+        $actual3 = $fb->fizzbuzz(1.6);
+        $actual4 = $fb->fizzbuzz(4);
+
+        // 想定の値と検証値が一致するかをテスト
+        $this->assertSame($expected, $actual1);
+        $this->assertSame($expected, $actual2);
+        $this->assertSame($expected, $actual3);
+        $this->assertNotSame($expected, $actual4);
+    }
 }
